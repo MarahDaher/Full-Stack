@@ -1,0 +1,15 @@
+<div class="field">
+  <label>{{ label }}:</label>
+  <input
+    [type]="type"
+    [formControl]="controlAsFormControl"
+    pInputText
+    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    [ngClass]="{
+      'ng-invalid ng-dirty': controlAsFormControl.hasError('required')
+    }"
+  />
+  <small *ngIf="controlAsFormControl.hasError('required')" class="p-error">{{
+    errorMessage
+  }}</small>
+</div>

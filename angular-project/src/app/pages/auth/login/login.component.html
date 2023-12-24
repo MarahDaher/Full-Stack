@@ -1,0 +1,26 @@
+<div class="flex align-items-center justify-content-center h-full">
+  <p-card header="Login">
+    <form [formGroup]="loginForm">
+      <app-form-input
+        [label]="'Email'"
+        [type]="'email'"
+        [control]="loginForm.get('email')!"
+        [errorMessage]="'E-mail is required!'"
+      ></app-form-input>
+      <app-form-input
+        [label]="'Password'"
+        [type]="'password'"
+        [control]="loginForm.get('password')!"
+        [errorMessage]="'Password is required!'"
+      ></app-form-input>
+      <div class="flex justify-content-end">
+        <p-button
+          label="Submit"
+          (click)="onSubmit()"
+          size="small"
+          [disabled]="loginForm.invalid"
+        ></p-button>
+      </div>
+    </form>
+  </p-card>
+</div>
